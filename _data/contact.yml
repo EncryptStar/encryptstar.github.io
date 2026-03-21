@@ -3,12 +3,20 @@
 - type: github
   icon: "fab fa-github"
 
-- type: twitter
-  icon: "fa-brands fa-x-twitter"
+#- type: twitter
+#  icon: "fa-brands fa-x-twitter"
 
-- type: email
-  icon: "fas fa-envelope"
-  noblank: true # open link in current tab
+- type: youtube
+  icon: "fa-brands fa-youtube"
+  url: "https://www.youtube.com/@encryptstar1683"
+
+- type: hackthebox
+  icon: "fa-solid fa-cube"
+  url: "https://app.hackthebox.com/users/2094064"
+
+#- type: email
+#  icon: "fas fa-envelope"
+#  noblank: true # open link in current tab
 
 - type: rss
   icon: "fas fa-rss"
