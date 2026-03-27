@@ -20,7 +20,7 @@ media_subpath: /assets/img/posts/Writeups/HackTheBox/TwoMillion
 
 3. On website, a button leads to 2million.htb/invite
 
-![inviteButton](inviteButton.png) <Update to assets folder later>
+![inviteButton](inviteButton.png)
 
 ### Interesting File
 4. The /invite page loads a JavaScript file named inviteapi.min.js which can be read in Firefox's Debugger.
@@ -106,7 +106,7 @@ data: Object { data: "Va beqre gb trarengr gur vaivgr pbqr, znxr n CBFG erdhrfg 
 
 13. I now have access to the site.
 
-![The site](theSite.png))
+![The site](theSite.png)
 
 14.  Clicking on "Access" in the left sidebar allows us to download an openvpn connection pack.
     - This is not directly useful, but we see it uses API to download the pack.
