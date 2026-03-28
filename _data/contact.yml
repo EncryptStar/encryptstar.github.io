@@ -12,7 +12,7 @@
 
 - type: hackthebox
   icon: "fa-solid fa-cube"
-  url: "https://app.hackthebox.com/users/2094064"
+  url: "https://app.hackthebox.com/public/users/2094064"
 
 #- type: email
 #  icon: "fas fa-envelope"
